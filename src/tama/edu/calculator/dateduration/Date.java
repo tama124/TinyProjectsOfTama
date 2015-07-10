@@ -44,7 +44,7 @@ public class Date {
 			check = 31;
 			break;
 		case 2:
-			if ((this.year % 400) == 0) {
+			if ((this.year % 4) == 0) {
 				check = 29;
 			} else {
 				check = 28;
@@ -94,55 +94,60 @@ public class Date {
 
 	public int getDatetoCompare() {
 		int totalDate = 0;
+		// year
 		for (int i = 1900; i <= this.year; i++) {
-			if ((i % 400) == 0) {
+			if ((i % 4) == 0) {
 				totalDate += 366;
 			} else {
 				totalDate += 365;
 			}
 		}
-		switch (this.month) {
-		case 1:
-			totalDate += 31;
-			break;
-		case 2:
-			if ((this.year % 400) == 0) {
-				totalDate += 29;
-			} else {
-				totalDate += 28;
+		// month
+		for (int i = 1; i <= this.month; i++) {
+			switch (i) {
+			case 1:
+				totalDate += 31;
+				break;
+			case 2:
+				if ((this.year % 4) == 0) {
+					totalDate += 29;
+				} else {
+					totalDate += 28;
+				}
+				break;
+			case 3:
+				totalDate += 31;
+				break;
+			case 4:
+				totalDate += 30;
+				break;
+			case 5:
+				totalDate += 31;
+				break;
+			case 6:
+				totalDate += 30;
+				break;
+			case 7:
+				totalDate += 31;
+				break;
+			case 8:
+				totalDate += 31;
+				break;
+			case 9:
+				totalDate += 30;
+				break;
+			case 10:
+				totalDate += 31;
+				break;
+			case 11:
+				totalDate += 30;
+				break;
+			case 12:
+				totalDate += 31;
+				break;
 			}
-			break;
-		case 3:
-			totalDate += 31;
-			break;
-		case 4:
-			totalDate += 30;
-			break;
-		case 5:
-			totalDate += 31;
-			break;
-		case 6:
-			totalDate += 30;
-			break;
-		case 7:
-			totalDate += 31;
-			break;
-		case 8:
-			totalDate += 31;
-			break;
-		case 9:
-			totalDate += 30;
-			break;
-		case 10:
-			totalDate += 31;
-			break;
-		case 11:
-			totalDate += 30;
-			break;
-		case 12:
-			totalDate += 31;
-			break;
 		}
+		// day
 		totalDate += this.day;
 		return totalDate;
 	}
