@@ -1,4 +1,4 @@
-package tama.edu.socketwithgui;
+package tama.edu.socket.chatting.gui;
 
 import java.net.ServerSocket;
 import java.net.Socket;

@@ -1,4 +1,4 @@
-package tama.edu.socketwithgui;
+package tama.edu.socket.chatting.gui;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Scanner;

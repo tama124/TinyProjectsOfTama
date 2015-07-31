@@ -1,4 +1,4 @@
-package tama.edu.socketwithgui;
+package tama.edu.socket.chatting.gui;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
